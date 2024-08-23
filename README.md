@@ -1,2 +1,2 @@
 # wastezero_dashboard
-DashBoard para o projeto da WastZero
+DashBoard para o projeto da WasteZero
