@@ -25,6 +25,12 @@ body {
     width: 100%;
 }
 
+.logo {
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
+}
+
 .navegacao {
     position: fixed;
     width: 300px;
@@ -32,6 +38,11 @@ body {
     background: var(--laranja);
     border-left: 10px solid var(--laranja);
     overflow: hidden;
+    transition: 0.5s;
+}
+
+.navegacao.ativo {
+    width: 80px;
 }
 
 .navegacao ul {
@@ -122,4 +133,87 @@ body {
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px var(--branco);
     pointer-events: none;
+}
+
+.conteudo {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-width: 100vh;
+    background: var(--branco);
+    transition: 0.5s;
+}
+
+.conteudo.ativo {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.conteudo__topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.conteudo__menuNav {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--laranja);
+}
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+  
+.cardBox .card {
+    position: relative;
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+  
+.cardBox .card .numeros {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--laranja);
+}
+  
+.cardBox .card .nomeCard {
+    color: var(--preto-secundario);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+  
+.cardBox .card .iconeBox {
+    font-size: 3.5rem;
+    color: var(--preto-secundario);
+}
+  
+.cardBox .card:hover {
+    background: var(--laranja);
+}
+  .cardBox .card:hover .numeros,
+  .cardBox .card:hover .nomeCard,
+  .cardBox .card:hover .iconeBox {
+    color: var(--branco);
 }
