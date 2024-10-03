@@ -1,107 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>DashBoard</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="container">
-            <div class="navegacao">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span class="navegacao__icone"><img class="logo" src="./assets/img/wast-removebg-preview.png" alt="Logo da WasteZero"></span>
-                            <span class="navegacao__titulo">WasteZero</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a href="#">
-                            <span class="navegacao__icone"><ion-icon name="home-outline"></ion-icon></span>
-                            <span class="navegacao__titulo">Dashboard</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a href="#">
-                            <span class="navegacao__icone"><ion-icon name="help-outline"></ion-icon></span>
-                            <span class="navegacao__titulo">Ajuda</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a href="#">
-                            <span class="navegacao__icone"><ion-icon name="settings-outline"></ion-icon></span>
-                            <span class="navegacao__titulo">Configurações</span>
-                        </a>
-                    </li>
-        
-                    <li>
-                        <a href="#">
-                            <span class="navegacao__icone"><ion-icon name="log-out-outline"></ion-icon></span>
-                            <span class="navegacao__titulo">Sign Out</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="conteudo">
-                <div class="conteudo__topbar">
-                    <div class="conteudo__menuNav">
-                        <ion-icon name="menu-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="cardBox">
-                    
-                    <div class="card">
-                        <div class="numeros">R$ 2,500
-                            <ion-icon class="iconeBox" name="cash-outline"></ion-icon>
-                        </div>
-                        <div class="nomeCard">Receita</div>
-                    </div>
-                    <div class="card">
-                        <div class="numeros">R$ 1,200
-                            <ion-icon class="iconeBox" name="wallet-outline"></ion-icon>
-                        </div>
-                        <div class="nomeCard">Custos</div>
-                    </div>
-                    <div class="card">
-                        <div class="numeros">R$ 500
-                            <ion-icon class="iconeBox" name="trending-down-outline"></ion-icon>
-                        </div>
-                        <div class="nomeCard">Prejuízo</div>
-                    </div>
-                    <div class="card">
-                        <div class="numeros">R$ 800
-                            <ion-icon class="iconeBox" name="people-outline"></ion-icon>
-                        </div>
-                        <div class="nomeCard">Consumo</div>
-                    </div>
-                </div>
-
-                <div class="graficos-container">
-                    <div class="grafico">
-                        <canvas id="line-chart"></canvas>
-                    </div>
-                
-                    <div class="grafico2">
-                        <canvas id="line-chart-2"></canvas>
-                    </div>
-                </div>
-                
-            </div>
-        
+      <div class="container">
+        <div class="navegacao">
+          <ul>
+            <li>
+              <a href="#">
+                <span class="navegacao__icone"
+                  ><img
+                    class="logo"
+                    src="./assets/img/wast-removebg-preview.png"
+                    alt="Logo da WasteZero"
+                /></span>
+                <span class="navegacao__titulo">WasteZero</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><span class="navegacao__icone"
+                  ><ion-icon name="home-outline"></ion-icon></span
+                ><span class="navegacao__titulo">Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="navegacao__icone"
+                  ><ion-icon name="help-outline"></ion-icon></span
+                ><span class="navegacao__titulo">Ajuda</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="navegacao__icone"
+                  ><ion-icon name="settings-outline"></ion-icon></span
+                ><span class="navegacao__titulo">Configurações</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="navegacao__icone"
+                  ><ion-icon name="log-out-outline"></ion-icon></span
+                ><span class="navegacao__titulo">Sign Out</span></a
+              >
+            </li>
+          </ul>
         </div>
-
+        <div class="conteudo">
+          <div class="conteudo__topbar">
+            <div class="conteudo__menuNav">
+              <ion-icon name="menu-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="cardBox">
+            <div class="card">
+              <div class="numeros">
+                R$ 2,500<ion-icon
+                  class="iconeBox"
+                  name="cash-outline"
+                ></ion-icon>
+              </div>
+              <div class="nomeCard">Receita</div>
+            </div>
+            <div class="card">
+              <div class="numeros">
+                R$ 1,200<ion-icon
+                  class="iconeBox"
+                  name="wallet-outline"
+                ></ion-icon>
+              </div>
+              <div class="nomeCard">Custos</div>
+            </div>
+            <div class="card">
+              <div class="numeros">
+                R$ 500<ion-icon
+                  class="iconeBox"
+                  name="trending-down-outline"
+                ></ion-icon>
+              </div>
+              <div class="nomeCard">Prejuízo</div>
+            </div>
+            <div class="card">
+              <div class="numeros">
+                R$ 800<ion-icon
+                  class="iconeBox"
+                  name="people-outline"
+                ></ion-icon>
+              </div>
+              <div class="nomeCard">Consumo</div>
+            </div>
+          </div>
+          <div class="graficos-container">
+            <div class="grafico"><canvas id="line-chart"></canvas></div>
+            <div class="grafico2"><canvas id="line-chart-2"></canvas></div>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="./assets/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./assets/js/graficos.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/graficos.js"></script>
+  </body>
 </html>
