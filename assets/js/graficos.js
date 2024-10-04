@@ -18,17 +18,18 @@ async function renderChart() {
   const ctx1 = document.getElementById("line-chart").getContext("2d");
   const ctx2 = document.getElementById("line-chart-2").getContext("2d");
 
+  // Gráfico de barras para Receita
   new Chart(ctx1, {
-    type: "line",
+    type: "bar",
     data: {
       labels: labels,
       datasets: [
         {
           label: "Receita",
           data: receitas,
+          backgroundColor: "rgba(75, 192, 192, 1)",
           borderColor: "rgba(75, 192, 192, 1)",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          fill: true,
+          borderWidth: 1,
         },
       ],
     },
@@ -42,24 +43,25 @@ async function renderChart() {
     },
   });
 
+  // Gráfico de barras para Custos e Prejuízo
   new Chart(ctx2, {
-    type: "line",
+    type: "bar",
     data: {
       labels: labels,
       datasets: [
         {
           label: "Custos",
           data: custos,
+          backgroundColor: "rgba(255, 99, 132, 1)",
           borderColor: "rgba(255, 99, 132, 1)",
-          backgroundColor: "rgba(255, 99, 132, 0.2)",
-          fill: true,
+          borderWidth: 1,
         },
         {
           label: "Prejuízo",
           data: prejuizos,
+          backgroundColor: "rgba(54, 162, 235, 1)",
           borderColor: "rgba(54, 162, 235, 1)",
-          backgroundColor: "rgba(54, 162, 235, 0.2)",
-          fill: true,
+          borderWidth: 1,
         },
       ],
     },

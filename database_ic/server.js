@@ -1,37 +1,31 @@
 const express = require("express");
-const mysql = require("mysql2");
+const mysql = require("mysql");
 const cors = require("cors");
 
 const app = express();
-const port = 3000;
-
 app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "seu_usuario",
+  password: "sua_senha",
   database: "bdvisight",
 });
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Conectado ao banco de dados!");
-});
-
-// Rota para listar os itens da tabela info_alimentos
-app.get("/alimentos", (req, res) => {
-  const sql =
-    "SELECT nome_alimento, receita, custo_kg, prejuizo FROM info_alimentos";
-  db.query(sql, (err, results) => {
+// Endpoint para obter todos os alimentos
+app.get("/api/alimentos", (req, res) => {
+  const query =
+    "SELECT * FROM info_alimentos ORDER BY id_alimentos DESC LIMIT 1"; // Obtém o último alimento
+  db.query(query, (err, results) => {
     if (err) {
-      return res.status(500).json({ error: err.message });
+      return res.status(500).send(err);
     }
-    res.json(results); // Retorna os dados como JSON
+    res.json(results);
   });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+// Inicia o servidor
+app.listen(3000, () => {
+  console.log("Servidor rodando na porta 3000");
 });
