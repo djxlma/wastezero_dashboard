@@ -12,8 +12,8 @@ async function renderChart() {
 
   const labels = data.map((item) => item.nome_alimento);
   const receitas = data.map((item) => item.receita);
-  const custos = data.map((item) => item.custo_kg);
-  const prejuizos = data.map((item) => item.prejuizo);
+  const pesoB = data.map((item) => item.peso_bruto);
+  const pesoL = data.map((item) => item.peso_liquido);
 
   const ctx1 = document.getElementById("line-chart").getContext("2d");
   const ctx2 = document.getElementById("line-chart-2").getContext("2d");
@@ -50,15 +50,15 @@ async function renderChart() {
       labels: labels,
       datasets: [
         {
-          label: "Custos",
-          data: custos,
+          label: "Peso liquido",
+          data: pesoL,
           backgroundColor: "rgba(255, 99, 132, 1)",
           borderColor: "rgba(255, 99, 132, 1)",
           borderWidth: 1,
         },
         {
-          label: "Prejuízo",
-          data: prejuizos,
+          label: "Peso bruto",
+          data: pesoB,
           backgroundColor: "rgba(54, 162, 235, 1)",
           borderColor: "rgba(54, 162, 235, 1)",
           borderWidth: 1,
