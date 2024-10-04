@@ -23,7 +23,7 @@ db.connect((err) => {
 // Rota para listar os itens da tabela info_alimentos
 app.get("/alimentos", (req, res) => {
   const sql =
-    "SELECT nome_alimento, receita, ROUND(peso_liquido * 1000) AS peso_liquido, ROUND(peso_bruto * 1000) AS peso_bruto FROM info_alimentos";
+    "SELECT nome_alimento, receita, ROUND(peso_liquido * 1000) AS peso_liquido, ROUND(peso_bruto * 1000) AS peso_bruto, FROM info_alimentos";
   db.query(sql, (err, results) => {
     if (err) {
       return res.status(500).json({ error: err.message });
