@@ -26,7 +26,9 @@ db.connect((err) => {
 // Rota para listar os itens da tabela info_alimentos
 app.get("/alimentos", (req, res) => {
   const sql =
-    "SELECT nome_alimento, receita, ROUND(peso_liquido * 1000) AS peso_liquido, ROUND(peso_bruto * 1000) AS peso_bruto FROM info_alimentos";
+    // Mudar essa constante, fazer com que ela se torne um array na qual faça um append para cada dado que deseja que seja exibido!
+    // "SELECT nome_alimento, rendimento_kg, ROUND(peso_liquido * 1000) AS peso_liquido, ROUND(peso_bruto * 1000) AS peso_bruto FROM info_alimentos";
+    "SELECT nome_alimento, rendimento_kg, peso_liquido, peso_bruto FROM info_alimentos";
   console.log("Executando SQL:", sql); // Log da consulta
   db.query(sql, (err, results) => {
     if (err) {
@@ -39,5 +41,5 @@ app.get("/alimentos", (req, res) => {
 
 // Iniciar o servidor
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Dados sendo armazenados em http://localhost:${port}/alimentos`);
 });
