@@ -19,9 +19,3 @@ menuNav.onclick = function () {
   navegacao.classList.toggle("ativo");
   conteudo.classList.toggle("ativo");
 };
-
-const objeto = data.map((item) => item.nome_alimento);
-const pesoL = data.map((item) => item.peso_liquido);
-
-const nomeAlimento = document.getElementById("line-chart");
-const pesoLiquidoAlimento = document.getElementById("line-chart-2");
