@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="teste.css" />
+    <title>Info Alimentos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dados dos Alimentos</h1>
+        <table id="tabela-alimentos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Peso Bruto (kg)</th>
+                    <th>Peso Líquido (kg)</th>
+                    <th>Rendimento (kg)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados serão inseridos aqui pelo JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Função para carregar os dados da tabela info_alimentos
+        fetch("http://localhost:3000/alimentos")
+            .then((response) => response.json())
+            .then((data) => {
+                const tbody = document.querySelector("#tabela-alimentos tbody");
+                data.forEach((alimento) => {
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        
+                        <td>${alimento.nome_alimento || 'N/A'}</td>
+                        <td>${alimento.peso_bruto || 'N/A'}</td>
+                        <td>${alimento.peso_liquido || 'N/A'}</td>
+                        <td>${alimento.rendimento_kg || 'N/A'}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            })
+            .catch((error) => console.error("Erro ao carregar os dados:", error));
+    </script>
+</body>
+</html>
